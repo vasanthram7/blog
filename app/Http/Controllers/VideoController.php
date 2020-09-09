@@ -57,7 +57,7 @@ class VideoController extends Controller
                     return redirect('upload')->with('error','Please choose .mp4 Video file!');
                 }
                  
-                
+                    
                  //$filename =  $request->file->getClientOriginalName();
                 
                 
