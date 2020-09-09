@@ -162,7 +162,7 @@ https://templatemo.com/tm-552-video-catalog
     preload="auto"
     width="640"
     height="264"
-    poster="{{ asset('storage/upload/testimonial-3.png') }}"
+    poster="{{ asset('storage/image/' . $video->image1) }}"
     data-setup="{}">
                               <source src="{{ asset('storage/upload/' . $video->videoName) }}" type="video/mp4" class="img-fluid tm-catalog-item-img">                           
                             Your browser does not support the video tag.
@@ -209,7 +209,7 @@ https://templatemo.com/tm-552-video-catalog
                             <p class="mb-5">Please subscribe our newsletter for upcoming new videos and latest information about our
                                 work. Thank you.</p>
                             <form action="" method="GET" class="tm-subscribe-form">
-                                <input type="text" name="email" placeholder="Your Email..." required>
+                                <input type="text" name="email" placeholder="Your Email..." >
                                 <button type="submit" class="btn rounded-0 btn-primary tm-btn-small">Subscribe</button>
                             </form>
                         </div>

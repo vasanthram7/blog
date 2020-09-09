@@ -11,13 +11,22 @@
     <link rel="stylesheet" href="{{ asset('css/templatemo-video-catalog.css') }}">
 </head>
 <body>
+   
     <div class="tm-page-wrap mx-auto">
+
         <div class="position-relative">
+             @if (session('error'))
+        <div class="alert alert-danger alert-dismissible">
+            {{ session('error') }}
+        </div>
+    @endif
             <div class="position-absolute tm-site-header">
+
                 <div class="container-fluid position-relative">
+                   
                     <div class="row">
                         <div class="col-7 col-md-4">
-                            <a href="index.html" class="tm-bg-black text-center tm-logo-container">
+                            <a href="#" class="tm-bg-black text-center tm-logo-container">
                                 <i class="fas fa-video tm-site-logo mb-3"></i>
                                 <h1 class="tm-site-name">Video Catalog</h1>
                             </a>
@@ -71,8 +80,8 @@
             </div>
             <div class="tm-welcome-container text-center text-white">
                 <div class="tm-welcome-container-inner">
-                    <p class="tm-welcome-text mb-1 text-white">Video Catalog is brought to you by TemplateMo.</p>
-                    <p class="tm-welcome-text mb-5 text-white">This is a full-width video banner.</p>
+                    <p class="tm-welcome-text mb-1 text-white"></p>
+                    <p class="tm-welcome-text mb-5 text-white"></p><br><br>
                     <form action="/upload" method="POST" enctype="multipart/form-data" >
                        {{csrf_field()}}
                         <div> Enter Video Name <input type="text" name="name" id="name"> </div><br>

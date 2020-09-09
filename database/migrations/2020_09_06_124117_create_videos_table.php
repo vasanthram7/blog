@@ -14,7 +14,13 @@ class CreateVideosTable extends Migration
     public function up()
     {
         Schema::create('videos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements();
+            $table->string('name')->nullable();
+            $table->string('description')->nullable();
+            $table->string('image1');
+            $table->string('videoName');
+            $table->string('size');
+
             $table->timestamps();
         });
     }

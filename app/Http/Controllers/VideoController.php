@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Video;
 use Illuminate\Http\Request;
+use Session;
 //use Illuminate\Support\Facades\Request;
 
 class VideoController extends Controller
@@ -57,33 +58,40 @@ class VideoController extends Controller
      
 
         if($request->hasFile('file')){
-
+          if($request->hasFile('image1')){  
             //$filename = $request->file->store('storage/upload');
             
-             echo $image1 =  $request->image1->getClientOriginalName();
-
-            echo $filename =  $request->file->getClientOriginalName();
+            echo $image1 = $request->file('image1')->getClientOriginalName();
+            echo $filename = $request->file('file')->getClientOriginalName();
             
-            //$filesize =  $request->file->getClientSize();
+             
+            //exit;
+             //$filename =  $request->file->getClientOriginalName();
+            
+            
             $filesize =  $request->file->getSize();
-            $request->file->storeAs('public/upload/storage',$image1);
+            $filesize1 =  $request->image1->getSize();
+            
             $request->file->storeAs('public/upload',$filename);
-           //return $request->file->store('public/upload');
+            $request->image1->storeAs('public/image',$image1);
+           
             $file = new Video;
-            //$file->videoName = 'storage/upload/'.$filename;
+            
             $file->videoName = $filename;
+            $file->image1 = $image1;
             $file->size = $filesize;
             
             $file->name    = $request->input('name');
             $file->description    = $request->input('desc'); 
 
             $file->save(); 
-            //return view('handleAdmin');
+            
             return redirect('admin');
-            //->with('videos', Video::all());
+            
         }
-
-    
+        return redirect('upload')->with('error', 'Please choose file to upload!');
+      } 
+    return redirect('upload')->with('error','Please choose file to upload!');
 
 
     }

@@ -47,7 +47,7 @@ https://templatemo.com/tm-552-video-catalog
                 <div class="container-fluid position-relative">
                     <div class="row">
                         <div class="col-7 col-md-4">
-                            <a href="index.html" class="tm-bg-black text-center tm-logo-container">
+                            <a href="/upload" class="tm-bg-black text-center tm-logo-container">
                                 <i class="fas fa-video tm-site-logo mb-3"></i>
                                 <h1 class="tm-site-name">Video Catalog</h1>
                             </a>
@@ -162,8 +162,9 @@ https://templatemo.com/tm-552-video-catalog
     preload="auto"
     width="640"
     height="264"
-    poster="{{ asset('storage/upload/testimonial-3.png') }}"
+    poster="{{ asset('storage/image/' . $video->image1) }}"
     data-setup="{}">
+                            
                               <source src="{{ asset('storage/upload/' . $video->videoName) }}" type="video/mp4" class="img-fluid tm-catalog-item-img">                           
                             
                             <p class="vjs-no-js">
