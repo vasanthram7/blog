@@ -35,7 +35,7 @@
 
 TemplateMo 552 Video Catalog
 
-https://templatemo.com/tm-552-video-catalog
+https://templatemo.com/tm-552-video-catalog 
 
 -->
 </head>

@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application dashboard..
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -31,6 +31,7 @@ class HomeController extends Controller
     {
         return view('handleAdmin');
     }
+    
     public function handleUpload()
     {
         return view('handleUpload');
