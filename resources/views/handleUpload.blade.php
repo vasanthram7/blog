@@ -134,7 +134,7 @@ input[type=submit]:hover {
                     <p class="tm-welcome-text mb-1 text-white"></p>
                     <p class="tm-welcome-text mb-5 text-white"></p><br><br><br><br><br>
                     <div class="container">
-  <form action="/upload" method="POST" enctype="multipart/form-data" onsubmit="return validateform1()">
+  <form action="/upload" method="POST" enctype="multipart/form-data" onsubmit="return validateform()">
     {{csrf_field()}}
     <label for="fname">Enter Video Name</label>
     <input type="text" id="name" name="name" placeholder="Video name..">
@@ -321,7 +321,7 @@ if (name ==""  || desc =="" || extension !="png" || size =="0" || extension1 !="
   
   if (extension =="mp4" || size1 == "0"){    $('#err_video').removeClass("errmsg"); }
   
-  alert("hi");
+  //alert("hi");
 
 return false;
 } 

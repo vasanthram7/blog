@@ -21,9 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/upload', 'VideoController@store');
-Route::resource('upload', 'VideoController');
+//Route::resource('upload', 'VideoController');
 
-//Route::get('upload/{id}', 'VideoController@edit');
+Route::get('upload/{id}', 'VideoController@show');
 
 
 	

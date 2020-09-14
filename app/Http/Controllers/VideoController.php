@@ -50,27 +50,27 @@ class VideoController extends Controller
 
 
             if($request->hasFile('file')){
-          if($request->hasFile('image1')){  
+            if($request->hasFile('image1')){  
                 //$filename = $request->file->store('storage/upload');
 
-echo $video = $_FILES["file"]["name"];
-echo $image = $_FILES["image1"]["name"];
-                                
-echo $image1 =$_FILES["image1"]["tmp_name"];
-echo $video1 =$_FILES["file"]["tmp_name"];
+                            echo $video = $_FILES["file"]["name"];
+                            echo $image = $_FILES["image1"]["name"];
+                                                            
+                            echo $image1 =$_FILES["image1"]["tmp_name"];
+                            echo $video1 =$_FILES["file"]["tmp_name"];
 
 
-$command = "ffmpeg -i $image1 -s 128x128    ../storage/app/public/image/$image"; 
-system($command);
+                            $command = "ffmpeg -i $image1 -s 128x128    ../storage/app/public/image/$image"; 
+                            system($command);
 
-echo "Overlay has been resized";
+                            echo "Overlay has been resized";
 
-$command = "ffmpeg -i $video1  -i   ../storage/app/public/image/$image";
-$command .= " -filter_complex \"[0:v][1:v]";
-$command .= " overlay=80:50\""; // closing double quotes
-$command .= " -c:a copy ../storage/app/public/upload/$video"; 
-system($command);
-echo "Overlay has been added";
+                            $command = "ffmpeg -i $video1  -i   ../storage/app/public/image/$image";
+                            $command .= " -filter_complex \"[0:v][1:v]";
+                            $command .= " overlay=80:50\""; // closing double quotes
+                            $command .= " -c:a copy ../storage/app/public/upload/$video"; 
+                            system($command);
+                            echo "Overlay has been added";
             
                 $image1 = $request->file('image1')->getClientOriginalName();
                 $filename = $request->file('file')->getClientOriginalName();
@@ -93,22 +93,7 @@ echo "Overlay has been added";
                 echo $img1 = $request->file('image1');
                 //exit;
                 
-/*//$ffmpeg = FFMpeg\FFMpeg::create();
-$ffmpeg = \FFMpeg\FFMpeg::create([
 
-    'ffmpeg' => [
-    'binaries' => env('FFMPEG_BINARIES', 'C:\xampp\htdocs\blog\ffmpeg\bin\ffmpeg.exe'),
-    'threads'  => 12,
-],
-'ffprobe' => [
-    'binaries' => env('FFPROBE_BINARIES', 'C:\xampp\htdocs\blog\ffmpeg\bin\ffprobe.exe'),
-], 
-]);
-echo $video = $ffmpeg->open('/public/image/'.$filename);
-
-$video->filters()
-    ->watermark($img1, array( 'position' => 'relative','bottom' => 50,'right' => 50, ));
-*/
 
                 
                 
@@ -145,10 +130,7 @@ $video->filters()
      * @param  \App\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function show(Video $video)
-    {
-        //
-    }
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -168,7 +150,11 @@ $video->filters()
         //
         // $lead = Lead::findOrFail($id);
         // return view('inventory.lead_qua', compact('lead'));
-        echo "string";
+        
+         //$lead = Lead::findOrFail($id);
+        
+        $video = Video::findOrFail($id);
+        return view('video', compact('video'));
         
     }
 

@@ -131,16 +131,10 @@ https://templatemo.com/tm-552-video-catalog
                 <main>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-page-title mb-4">Our Video Catalog</h2>
+                            <h2 class="tm-page-title mb-4">Our Video Catalog  </h2>
                             <div class="tm-categories-container mb-5">
-                                <h3 class="tm-text-primary tm-categories-text">Categories:</h3>
-                                <ul class="nav tm-category-list">
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link active">All</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Drone Shots</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Nature</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Actions</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Featured</a></li>
-                                </ul>
+                                <h3 class="tm-text-primary tm-categories-text">PleasE ClicK on TitlE to WatcH VideoS</h3>
+                                
                             </div>        
                         </div>
                     </div>
@@ -153,33 +147,14 @@ https://templatemo.com/tm-552-video-catalog
                         @foreach($videos as $video)
                         <?php  ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container video-wrapper" id="cp_widget_1539590707155">
+                            <div class="position-relative tm-thumbnail-container video-wrapper" id="">
                                 
-                                <video   controls  
-                                id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="640"
-    height="264"
-    poster="{{ asset('storage/image/' . $video->image1) }}"
-    data-setup="{}">
-
-                              <source src="{{ asset('storage/upload/' . $video->videoName) }}" type="video/mp4" class="img-fluid tm-catalog-item-img">                           
-                            
-                            <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="http://localhost:8000/storage/upload/VID-20200904-WA0002.mp4" target="_blank"
-        >supports HTML5 video</a>
-    </p>
-                              <i class="fas fa-play tm-overlay-icon"></i>
-                            </video>
+                                
                                   
                                
         
                             </div>    
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                            <div class="p-4 tm-bg-danger tm-catalog-item-description">
                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><a href="upload/{{$video->id}}">{{$video->name}}</a> </h3>
                                 <p class="tm-catalog-item-text">{{$video->description}}<span class="tm-text-secondary">do not need</span> any JS. 
                                     They are just separated HTML pages. Paging is at the bottom to extend the list as long as you want. 
