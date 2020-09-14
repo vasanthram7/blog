@@ -153,7 +153,7 @@ https://templatemo.com/tm-552-video-catalog
                         @foreach($videos as $video)
                         <?php  ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container video-wrapper">
+                            <div class="position-relative tm-thumbnail-container video-wrapper" id="cp_widget_1539590707155">
                                 
                                 <video   controls  
                                 id="my-video"
@@ -170,17 +170,17 @@ https://templatemo.com/tm-552-video-catalog
                             <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a
       web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
+      <a href="http://localhost:8000/storage/upload/VID-20200904-WA0002.mp4" target="_blank"
+        >supports HTML5 video</a>
     </p>
                               <i class="fas fa-play tm-overlay-icon"></i>
                             </video>
                                   
-                                
+                               
+        
                             </div>    
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">{{$video->name}}</h3>
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><a href="upload/{{$video->id}}">{{$video->name}}</a> </h3>
                                 <p class="tm-catalog-item-text">{{$video->description}}<span class="tm-text-secondary">do not need</span> any JS. 
                                     They are just separated HTML pages. Paging is at the bottom to extend the list as long as you want. 
                                     This can be a large catalog.</p>
@@ -316,6 +316,29 @@ https://templatemo.com/tm-552-video-catalog
         })
     </script>
     <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
+    <script type="text/javascript">
+var cincopa = cincopa || {};
+cincopa.registeredFunctions = cincopa.registeredFunctions || [];
+cincopa.registeredFunctions.push({
+    func: function (name, data, gallery) {
+    gallery.args.watermark_on_off = true;
+    gallery.args.watermark_position = "top_left"; // top_left, top_right, bottom_left, bottom_right
+    gallery.args.watermark = "{{ asset('storage/image/' . $video->image1) }}";
+    
+    gallery.args.new_page = true; // open link in a new page
+  }, filter: "runtime.on-args"
+});
+</script>
+
+<script type="text/javascript">
+var cpo = []; cpo["_object"] ="cp_widget_1539590707155"; cpo["_fid"] = "A4HAcLOLOO68!AYJDnKyNYNPX";
+var _cpmp = _cpmp || []; _cpmp.push(cpo);
+(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
+cp.async = true; cp.src = "//wwwcdn.cincopa.com/media-platform/runtime/libasync.js";
+var c = document.getElementsByTagName("script")[0];
+c.parentNode.insertBefore(cp, c); })(); 
+</script>
 </body>
 
 </html>

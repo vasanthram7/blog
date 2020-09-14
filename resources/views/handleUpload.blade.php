@@ -9,6 +9,57 @@
     <!-- https://fonts.google.com/  -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo-video-catalog.css') }}">
+    <style type="text/css">
+              .errmsg {
+                display: none;
+              }
+              .error_msg{
+                color:  #f51616;
+                
+                font-style: initial;
+                font-weight: 900;
+                margin-left: -8px;
+                /*font-variant: small-caps;*/
+              }
+              .confirmMessage{
+                 font-weight: bolder;
+                 font-variant: initial;
+                }
+        </style>    
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #373436;
+  padding: 20px;
+}
+</style>    
 </head>
 <body>
    
@@ -81,19 +132,32 @@
             <div class="tm-welcome-container text-center text-white">
                 <div class="tm-welcome-container-inner">
                     <p class="tm-welcome-text mb-1 text-white"></p>
-                    <p class="tm-welcome-text mb-5 text-white"></p><br><br>
-                    <form action="/upload" method="POST" enctype="multipart/form-data" >
-                       {{csrf_field()}}
-                        <div> Enter Video Name <input type="text" name="name" id="name"> </div><br>
-                        <div> Enter Video Description  </div><br>
-                        <div><textarea id="desc" name="desc" rows="4" cols="50"></textarea></div><br>
-                        <div> Select Image  <input type="file" name="image1" id="image1"> </div><br><br>
-                        <div> Select Video<input type="file" name="file" id="file"> </div><br>
-                    <div>
-                    <button type="submit" class="btn tm-btn-animate tm-btn-cta tm-icon-down">
-                        <span>Upload</span>
-                    </button> </div>
-                    </form>
+                    <p class="tm-welcome-text mb-5 text-white"></p><br><br><br><br><br>
+                    <div class="container">
+  <form action="/upload" method="POST" enctype="multipart/form-data" onsubmit="return validateform1()">
+    {{csrf_field()}}
+    <label for="fname">Enter Video Name</label>
+    <input type="text" id="name" name="name" placeholder="Video name..">
+    <span id="err_name" class="error_msg errmsg" style="color: #f51616;">Please Enter Video Name  !...</span>
+ <br>
+    <label for="subject">Enter Video Description</label>
+    <textarea id="desc" name="desc" placeholder="Write something.." style="height:200px"></textarea>
+    <span id="err_desc" class="error_msg errmsg" style="color: #f51616;">Please Enter some description  !...</span>
+<br>    
+    <label for="fname">Select Image</label>
+    <input type="file" id="image1" name="image1" placeholder="Image file..">
+    <span id="err_img" class="error_msg errmsg" style="color: #f51616;">Please Choose .png image  !...</span>
+ <br>   
+    <label for="fname">Select Video</label>
+    <input type="file" id="file" name="file" placeholder="Video file..">
+    <span id="err_video" class="error_msg errmsg" style="color: #f51616;">Please Choose .mp4 video  !...</span>
+<br>
+
+    <input type="submit" value="Upload">
+  </form>
+</div>
+
+                    
                     
                 </div>
             </div>
@@ -225,6 +289,51 @@
             });
         })
     </script>
+    <script type="text/javascript">
+
+function validateform() {
+
+ var name = $("#name").val();
+ var desc = $("#desc").val();
+
+ 
+ var file = document.getElementById("image1");
+ var file_name = file.value;
+ var extension = file_name.split('.').pop().toLowerCase();
+ var size      = file.files.length;
+ 
+ 
+ var file1 = document.getElementById("file");
+ var file_name1 = file1.value;
+ var extension1 = file_name1.split('.').pop().toLowerCase();
+ var size1      = file1.files.length;
+ //alert(size);
+ //alert(extension1);
+
+ 
+
+
+if (name ==""  || desc =="" || extension !="png" || size =="0" || extension1 !="mp4" || size1 =="0" ){  
+    
+  if (name == "")       {    $('#err_name').removeClass("errmsg"); }
+  if (desc == "")       {    $('#err_desc').removeClass("errmsg"); }
+  if (extension !="png" || size == "0"){    $('#err_img').removeClass("errmsg"); }
+  
+  if (extension =="mp4" || size1 == "0"){    $('#err_video').removeClass("errmsg"); }
+  
+  alert("hi");
+
+return false;
+} 
+} 
+</script> 
+<script>
+    $("#name").keyup(function()    {     $("#err_name").addClass("errmsg");        });
+    $("#desc").keyup(function()    {     $("#err_desc").addClass("errmsg");        });
+    $("#image1").change(function() {     $("#err_img").addClass("errmsg");         });
+    $("#file").change(function()   {     $("#err_video").addClass("errmsg");       });
+    
+</script>
 </body>
 </html>
 

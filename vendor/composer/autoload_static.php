@@ -88,6 +88,7 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\TemporaryDirectory\\' => 26,
         ),
         'R' => 
         array (
@@ -102,6 +103,7 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'ProtoneMedia\\LaravelFFMpeg\\' => 27,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
@@ -314,6 +316,10 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\TemporaryDirectory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/temporary-directory/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -345,6 +351,10 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'ProtoneMedia\\LaravelFFMpeg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src',
         ),
         'Prophecy\\' => 
         array (
@@ -565,6 +575,7 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\VideoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VideoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -3903,6 +3914,29 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
         'Prophecy\\Prophet' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Prophet.php',
         'Prophecy\\Util\\ExportUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php',
         'Prophecy\\Util\\StringUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/StringUtil.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Drivers\\PHPFFMpeg' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Drivers/PHPFFMpeg.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HLSExporter' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HLSExporter.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HLSPlaylistGenerator' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HLSPlaylistGenerator.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HandlesAdvancedMedia' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HandlesAdvancedMedia.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HandlesConcatenation' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HandlesConcatenation.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HandlesFrames' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HandlesFrames.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HandlesTimelapse' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HandlesTimelapse.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\HasProgressListener' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/HasProgressListener.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\MediaExporter' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/MediaExporter.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Exporters\\PlaylistGenerator' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Exporters/PlaylistGenerator.php',
+        'ProtoneMedia\\LaravelFFMpeg\\FFMpeg\\AdvancedOutputMapping' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/FFMpeg/AdvancedOutputMapping.php',
+        'ProtoneMedia\\LaravelFFMpeg\\FFMpeg\\CopyFormat' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/FFMpeg/CopyFormat.php',
+        'ProtoneMedia\\LaravelFFMpeg\\FFMpeg\\LegacyFilterMapping' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/FFMpeg/LegacyFilterMapping.php',
+        'ProtoneMedia\\LaravelFFMpeg\\FFMpeg\\ProgressListenerDecorator' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/FFMpeg/ProgressListenerDecorator.php',
+        'ProtoneMedia\\LaravelFFMpeg\\FFMpeg\\VideoProgressListenerDecorator' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/FFMpeg/VideoProgressListenerDecorator.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Filesystem\\Disk' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Filesystem/Disk.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Filesystem\\Media' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Filesystem/Media.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Filesystem\\MediaCollection' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Filesystem/MediaCollection.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Filesystem\\TemporaryDirectories' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Filesystem/TemporaryDirectories.php',
+        'ProtoneMedia\\LaravelFFMpeg\\MediaOpener' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/MediaOpener.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Support\\FFMpeg' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Support/FFMpeg.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Support\\MediaOpenerFactory' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Support/MediaOpenerFactory.php',
+        'ProtoneMedia\\LaravelFFMpeg\\Support\\ServiceProvider' => __DIR__ . '/..' . '/pbmedia/laravel-ffmpeg/src/Support/ServiceProvider.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -4316,6 +4350,7 @@ class ComposerStaticInitb248e34c37a07f9968080da719e97f7b
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'Spatie\\TemporaryDirectory\\TemporaryDirectory' => __DIR__ . '/..' . '/spatie/temporary-directory/src/TemporaryDirectory.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
